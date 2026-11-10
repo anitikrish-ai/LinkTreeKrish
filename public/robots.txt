@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://krish07.vercel.app/sitemap.xml
+
+# Disallow admin paths (none in this static-friendly site)
+# Disallow: /api/
+
+# AI Crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: CCBot
+Allow: /
+

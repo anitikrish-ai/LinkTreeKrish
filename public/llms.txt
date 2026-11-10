@@ -1,0 +1,5 @@
+this site is a minimalist personal profile page and social link hub for Krish (@Krish07).
+it is designed for developers, designers, and creators who want to view social media profiles and optionally see sponsor or advertisement content.
+
+> developer, designer, creator. connect via youtube, instagram, github, and pinterest.
+

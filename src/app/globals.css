@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: "Inter", "Geist", -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  
+  --bg-canvas: #F7F7F8;
+  --bg-card: #FFFFFF;
+  --bg-elevated: #FAFAFC;
+  --border-subtle: #E5E5E7;
+  --border-strong: #D6D6DC;
+  --text-primary: #171717;
+  --text-secondary: #777777;
+  --text-tertiary: #9E9EA4;
+  --accent: #6D9FEA;
+  --accent-subtle: rgba(109, 159, 234, 0.12);
+  --gradient-end: #F7F7F8;
+  
+  color-scheme: light;
+}
+
+html.dark {
+  --bg-canvas: #0C0C0E;
+  --bg-card: #141416;
+  --bg-elevated: #1B1B1E;
+  --border-subtle: #242427;
+  --border-strong: #323236;
+  --text-primary: #F5F5F7;
+  --text-secondary: #8E8E93;
+  --text-tertiary: #636366;
+  --accent: #6D9FEA;
+  --accent-subtle: rgba(109, 159, 234, 0.16);
+  --gradient-end: #0C0C0E;
+  
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  background-color: var(--bg-canvas);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: var(--bg-canvas);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Reduced motion accessibility contract per Apple Human Interface Guidelines */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Smooth fluid transition during theme toggle */
+html.theme-transition,
+html.theme-transition body,
+html.theme-transition div,
+html.theme-transition main,
+html.theme-transition header,
+html.theme-transition footer,
+html.theme-transition nav,
+html.theme-transition section,
+html.theme-transition a,
+html.theme-transition button,
+html.theme-transition span,
+html.theme-transition p {
+  transition: background-color 240ms cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 240ms cubic-bezier(0.4, 0, 0.2, 1),
+              color 240ms cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* High contrast mode enhancements */
+@media (prefers-contrast: more) {
+  .rounded-apple,
+  .rounded-apple-lg,
+  .rounded-apple-xl {
+    border-width: 2px !important;
+  }
+}
+
+/* Custom selection styling */
+::selection {
+  background-color: #6D9FEA;
+  color: #FFFFFF;
+}
+
+html.dark ::selection {
+  background-color: #5A8FD9;
+  color: #FFFFFF;
+}
+
+/* Icon wiggle — CSS keyframe */
+@keyframes wiggle {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  25%       { transform: scale(1.08) rotate(-3deg); }
+  75%       { transform: scale(1.08) rotate(3deg); }
+}
+.icon-wiggle {
+  animation: wiggle 0.35s ease-in-out;
+}
+
+/* Subdued grid background for tech banner */
+.tech-grid-pattern {
+  background-size: 24px 24px;
+  background-image: 
+    linear-gradient(to right, rgba(120, 120, 130, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(120, 120, 130, 0.06) 1px, transparent 1px);
+}
+
+html.dark .tech-grid-pattern {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+}
+
+/* Scroll-bar polish */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: #D6D6DC;
+  border-radius: 999px;
+}
+html.dark ::-webkit-scrollbar-thumb { background: #2A2A2E; }
