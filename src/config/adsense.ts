@@ -53,7 +53,7 @@ export const adsenseConfig: AdSenseConfig = {
 
   adsTxt: {
     domain: 'google.com',
-    publisherId: process.env.NEXT_PUBLIC_ADSENSE_PUB_ID || 'pub-XXXXXXXXXXXXXXXX',
+    publisherId: process.env.NEXT_PUBLIC_ADSENSE_PUB_ID || 'pub-3291476880225318',
     relationship: 'DIRECT',
     certificationAuthorityId: 'f08c47fec0942fa0',
   },

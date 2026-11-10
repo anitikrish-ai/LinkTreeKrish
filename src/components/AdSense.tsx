@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
-import Script from 'next/script';
 import { adsenseConfig } from '@/config/adsense';
 
 interface AdSlotProps {
@@ -22,12 +21,10 @@ export function AdSenseScript() {
   }
 
   return (
-    <Script
-      id="google-adsense-sdk"
+    <script
       async
       src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsenseConfig.client}`}
       crossOrigin="anonymous"
-      strategy="afterInteractive"
     />
   );
 }

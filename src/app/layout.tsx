@@ -115,7 +115,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaJsonLd) }}
         />
-        {/* Google AdSense Script Integration (Loaded once with strategy="afterInteractive") */}
+        {/* Google AdSense Script Integration (plain server-rendered <script> in <head>, rendered once) */}
         <AdSenseScript />
       </head>
       <body className="antialiased min-h-screen flex flex-col bg-[#F7F7F8] dark:bg-[#0C0C0E] text-[#171717] dark:text-[#F5F5F7] transition-colors duration-200">
