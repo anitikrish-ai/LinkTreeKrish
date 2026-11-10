@@ -38,10 +38,10 @@ export interface AdSenseConfig {
 
 export const adsenseConfig: AdSenseConfig = {
   // Enabled via environment variable or flipped to true once approved by Google
-  enabled: process.env.NEXT_PUBLIC_ADSENSE_ENABLED === 'true',
+  enabled: true,
 
   // Replace with your real Google AdSense Publisher ID (e.g. ca-pub-XXXXXXXXXXXXXXXX)
-  client: process.env.NEXT_PUBLIC_ADSENSE_CLIENT || 'ca-pub-XXXXXXXXXXXXXXXX',
+  client: 'ca-pub-3291476880225318',
 
   slots: {
     inFeedBanner: process.env.NEXT_PUBLIC_ADSENSE_SLOT_FEED || process.env.NEXT_PUBLIC_ADSENSE_SLOT_HEADER || '',
